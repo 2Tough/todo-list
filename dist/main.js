@@ -7,26 +7,110 @@
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
+
+/***/ "./src/blank-to-do.js":
+/*!****************************!*\
+  !*** ./src/blank-to-do.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"blankToDo\": () => (/* binding */ blankToDo)\n/* harmony export */ });\nconst blankToDo = () => {\n    \n    const projectsArray = [];\n    let projectTitle = \"Project name\";\n    projectsArray.push(projectTitle)\n    return {\n        projectsArray, projectTitle\n    }\n};\n\n//# sourceURL=webpack://todo-list/./src/blank-to-do.js?");
+
+/***/ }),
+
+/***/ "./src/default-to-do.js":
+/*!******************************!*\
+  !*** ./src/default-to-do.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"defaultToDo\": () => (/* binding */ defaultToDo)\n/* harmony export */ });\n/* harmony import */ var _blank_to_do__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./blank-to-do */ \"./src/blank-to-do.js\");\n\n\nfunction defaultToDo () {\n\n    const contentDiv = document.getElementById(\"content\");\n    const heading = document.createElement(\"h1\");\n    heading.textContent = \"Your ToDo\";\n    contentDiv.appendChild(heading);\n\n    const projectsDiv = document.createElement(\"div\");\n    projectsDiv.textContent = (0,_blank_to_do__WEBPACK_IMPORTED_MODULE_0__.blankToDo)().projectTitle;\n    contentDiv.appendChild(projectsDiv);\n\n}\n\n//# sourceURL=webpack://todo-list/./src/default-to-do.js?");
+
+/***/ }),
 
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("\n\n//# sourceURL=webpack://todo-list/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _blank_to_do__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./blank-to-do */ \"./src/blank-to-do.js\");\n/* harmony import */ var _default_to_do__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./default-to-do */ \"./src/default-to-do.js\");\n/* harmony import */ var _new_to_do__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./new-to-do */ \"./src/new-to-do.js\");\n\n\n\n\n(0,_blank_to_do__WEBPACK_IMPORTED_MODULE_0__.blankToDo)();\n\n(0,_default_to_do__WEBPACK_IMPORTED_MODULE_1__.defaultToDo)();\n\n\nconst contentDiv = document.getElementById(\"content\")\n\n\n\n\n//# sourceURL=webpack://todo-list/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/new-to-do.js":
+/*!**************************!*\
+  !*** ./src/new-to-do.js ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"newToDo\": () => (/* binding */ newToDo)\n/* harmony export */ });\nlet toDoArray = [];\n\nconst newToDo = (Title, Description, DueDate, Priority, CheckList) => {\n    toDoArray.push({Title, Description, DueDate, Priority, CheckList})\n\n    return {Title, Description, DueDate, Priority, CheckList};\n}\n\n//# sourceURL=webpack://todo-list/./src/new-to-do.js?");
 
 /***/ })
 
 /******/ 	});
 /************************************************************************/
+/******/ 	// The module cache
+/******/ 	var __webpack_module_cache__ = {};
+/******/ 	
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/ 		// Check if module is in cache
+/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
+/******/ 		if (cachedModule !== undefined) {
+/******/ 			return cachedModule.exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = __webpack_module_cache__[moduleId] = {
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
+/******/ 			exports: {}
+/******/ 		};
+/******/ 	
+/******/ 		// Execute the module function
+/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/************************************************************************/
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = {};
-/******/ 	__webpack_modules__["./src/index.js"]();
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/index.js");
 /******/ 	
 /******/ })()
 ;
