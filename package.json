@@ -1,0 +1,22 @@
+{
+  "name": "todo-list",
+  "version": "1.0.0",
+  "description": "A todo list task from The Odin Project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/2Tough/todo-list.git"
+  },
+  "author": "Valentin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/2Tough/todo-list/issues"
+  },
+  "homepage": "https://github.com/2Tough/todo-list#readme",
+  "devDependencies": {
+    "webpack-cli": "^5.0.1"
+  }
+}
