@@ -11,4 +11,6 @@ export function defaultToDo () {
     projectsDiv.textContent = blankToDo().projectTitle;
     contentDiv.appendChild(projectsDiv);
 
+    // default styling can go here.
+
 }
