@@ -7,3 +7,5 @@ export const blankToDo = () => {
         projectsArray, projectTitle
     }
 };
+
+//Todo: get input value and store it.

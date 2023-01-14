@@ -1,3 +1,19 @@
 body {
     background-color: aqua;
 }
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+input {
+    width: 80%;
+    margin-bottom: 0.5em;
+}
+
+.inputBody {
+    width: 80%;
+    height: 8rem;
+}
