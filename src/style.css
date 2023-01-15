@@ -10,10 +10,11 @@ body {
 
 input {
     width: 80%;
-    margin-bottom: 0.5em;
+    margin-bottom: 0;
 }
 
 .inputBody {
     width: 80%;
     height: 8rem;
+    margin-bottom: 0;
 }

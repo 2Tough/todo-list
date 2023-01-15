@@ -7,6 +7,6 @@ blankToDo();
 defaultToDo();
 
 
-const contentDiv = document.getElementById("content")
+const contentDiv = document.getElementById("main-content")
 
 console.log("testing")

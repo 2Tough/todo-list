@@ -1,10 +1,18 @@
 export const blankToDo = () => {
     
-    const projectsArray = [];
+    const projectsArrayTitle = [];
+    const projectsArrayBody = [];
     let projectTitle = "Project name";
-    projectsArray.push(projectTitle)
+    let projectBody = "Project body";
+    projectsArrayTitle.push(projectTitle)
+    projectsArrayBody.push(projectBody)
+
     return {
-        projectsArray, projectTitle
+        projectsArrayTitle, 
+        projectsArrayBody, 
+        projectTitle,
+        projectBody
+
     }
 };
 
