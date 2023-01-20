@@ -8,18 +8,7 @@ export function defaultToDo () {
     heading.textContent = "Your ToDo for today";
     contentDiv.appendChild(heading);
 
-       // title value
-
-       const getTodoInfo = (() => {
-        const titleValue = inputTitle.value
-        const bodyValue = inputBody.value
-
-
-
-        console.log(titleValue);
-        console.log(bodyValue);
-    })
-
+      
 
     // Title
     
@@ -28,6 +17,7 @@ export function defaultToDo () {
     
     const inputTitle = document.createElement("input");
     inputTitle.classList.add("inputTitle");
+    inputTitle.type = "text";
     
     const titleContainerDiv = document.createElement("div");
     titleContainerDiv.append(projectsDiv, inputTitle);
@@ -41,6 +31,7 @@ export function defaultToDo () {
 
     const inputBody = document.createElement("input");
     inputBody.classList.add("inputBody");
+    inputBody.type = "text";
     contentDiv.appendChild(inputBody);
 
     const bodyContainerDiv = document.createElement("div");
@@ -55,7 +46,26 @@ export function defaultToDo () {
     submitBtn.classList.add("submitBtn");
     contentDiv.appendChild(submitBtn);
 
+    submitBtn.addEventListener("click", function () {
+        console.log("test");
+        const titleValue = inputTitle.value
+        const bodyValue = inputBody.value
+    
+        console.log(titleValue);
+        console.log(bodyValue);
+    })
+
+
+
+
+    return submitBtn
+
 
     // default styling can go here.
+
+    // title value
+
+
+
 
 }
