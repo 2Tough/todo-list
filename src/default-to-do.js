@@ -60,10 +60,7 @@ export function defaultToDo () {
 
     return submitBtn
 
-
-    // default styling can go here.
-
-    // title value
+    const createNewToDoBtn = document.createElement("")
 
 
 
