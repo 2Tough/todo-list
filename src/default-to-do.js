@@ -1,6 +1,7 @@
 import { blankToDo } from "./blank-to-do";
+import { newToDo } from "./new-to-do";
 
-export function defaultToDo () {
+export function defaultToDo() {
 
     const contentDiv = document.getElementById("main-content");
     
@@ -47,22 +48,30 @@ export function defaultToDo () {
     contentDiv.appendChild(submitBtn);
 
     submitBtn.addEventListener("click", function () {
-        console.log("test");
         const titleValue = inputTitle.value
         const bodyValue = inputBody.value
+        
+
+    })
+
+    const createNewToDoBtn = document.createElement("button");
+    createNewToDoBtn.textContent = "New ToDo";
+    createNewToDoBtn.classList.add("newToDo");
+    contentDiv.appendChild(createNewToDoBtn);
+
+
+    createNewToDoBtn.addEventListener("click", function () {
+        console.log("this is the title value " + inputTitle.value);
+        console.log("this is the body value " + inputBody.value);
+
+        newToDo(inputTitle, inputBody, "tomorrow", "High", "Done");
+
+        console.log(newToDo)
+        console.log(toDoArray)
     
-        console.log(titleValue);
-        console.log(bodyValue);
+
     })
 
 
-
-
-    return submitBtn
-
-    const createNewToDoBtn = document.createElement("")
-
-
-
-
+    console.log(newToDo)
 }

@@ -9,6 +9,3 @@ defaultToDo();
 
 
 const contentDiv = document.getElementById("main-content")
-
-console.log(blankToDo)
-console.log(newToDo)

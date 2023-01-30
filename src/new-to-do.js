@@ -2,6 +2,7 @@ import { defaultToDo } from "./default-to-do";
 
 let toDoArray = [];
 
+
 //New ToDo factory
 
 export const newToDo = (Title, Description, DueDate, Priority, CheckList) => {
@@ -13,9 +14,12 @@ export const newToDo = (Title, Description, DueDate, Priority, CheckList) => {
         CheckList
     }
     
-    //toDoArray.push({Title, Description, DueDate, Priority, CheckList})
+    
 
     return {Title, Description, DueDate, Priority, CheckList};
+    toDoArray.push({Title, Description, DueDate, Priority, CheckList})
+
+    console.log(toDoArray);
 }
 
 // Create constructor or class here
