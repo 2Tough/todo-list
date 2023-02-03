@@ -5,6 +5,11 @@ export function defaultToDo() {
 
     const contentDiv = document.getElementById("main-content");
     
+    const toDoContainer = document.createElement("div");
+    toDoContainer.classList.add("toDoContainer");
+    contentDiv.appendChild(toDoContainer);
+
+
     const heading = document.createElement("h1");
     heading.textContent = "Your ToDo for today";
     contentDiv.appendChild(heading);

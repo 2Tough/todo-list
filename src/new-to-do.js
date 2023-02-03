@@ -5,21 +5,36 @@ let toDoArray = [];
 
 //New ToDo factory
 
-export const newToDo = (Title, Description, DueDate, Priority, CheckList) => {
-    const getNewToDo = () => {
+export const newToDo = (name) => {
+    const getNewToDo = (Title, Description, DueDate, Priority, CheckList) => {
         Title
         Description
         DueDate
         Priority
         CheckList
+    };
+    
+    
+    const changeName = () => {
+        getNewToDo.Title = newTitle
     }
-    
-    
 
-    return {Title, Description, DueDate, Priority, CheckList};
+    const addTask = (task) => {
+        getNewToDo.task.push(task);
+        return task;
+    }
+
+    const delTask = (title) => {
+        const deletion = newToDo.tasks.splice(
+            newToDo.tasks.findIndex((task) => task.title == title), 1);
+            return deletion;
+            
+    }
+
+    
     toDoArray.push({Title, Description, DueDate, Priority, CheckList})
 
-    console.log(toDoArray);
+    
 }
 
 // Create constructor or class here

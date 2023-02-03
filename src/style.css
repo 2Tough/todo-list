@@ -6,6 +6,18 @@ body {
     display: flex;
     flex-direction: column;
     width: 80%;
+    border: none;
+}
+
+.inputTitle {
+    border: none;
+}
+
+.inputBody {
+    width: 80%;
+    height: 8rem;
+    margin-bottom: 0;
+    border: none;
 }
 
 input {
@@ -13,8 +25,3 @@ input {
     margin-bottom: 0;
 }
 
-.inputBody {
-    width: 80%;
-    height: 8rem;
-    margin-bottom: 0;
-}
