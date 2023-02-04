@@ -12,16 +12,29 @@ export const newToDo = (name) => {
         DueDate
         Priority
         CheckList
+        
     };
     
     
-    const changeName = () => {
-        getNewToDo.Title = newTitle
+    const changeTitle = () => {
+        getNewToDo.Title = newTitle;
     }
 
-    const addTask = (task) => {
-        getNewToDo.task.push(task);
-        return task;
+    const changeDescription = (Description) => {
+        return getNewToDo.Description = Description;
+        
+    }
+
+    const changeDueDate = (DueDate) => {
+        return getNewToDo.DueDate = DueDate;
+    }
+
+    const changePriority = (Priority) => {
+        return getNewToDo.Priority;
+    }
+
+    const changeCheckList = (CheckList) => {
+        return getNewToDo.CheckList;
     }
 
     const delTask = (title) => {
@@ -31,8 +44,17 @@ export const newToDo = (name) => {
             
     }
 
+
+    return 
+        changeTitle,
+        changeDescription,
+        changeDueDate,
+        changePriority,
+        changeCheckList
     
-    toDoArray.push({Title, Description, DueDate, Priority, CheckList})
+
+    
+    
 
     
 }
