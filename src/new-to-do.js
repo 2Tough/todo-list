@@ -54,7 +54,7 @@ export const newToDo = (name) => {
     
 
     
-    
+ //TODO: Test factories and remaining elements.   
 
     
 }
