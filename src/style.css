@@ -10,17 +10,30 @@ body {
     border: none;
 }
 
-.inputTitle {
-    border: none;
-    
+.taskTitle, .taskBody {
+    padding-top: 1em;
+    color: rgb(255, 255, 255);
     
 }
+
+.taskBody {
+    padding: 0;
+}
+
+.inputTitle {
+    border: none;
+    padding: 0.6em 0;
+    border-radius: 15px;
+}
+
 
 .inputBody {
     width: 80%;
     height: 8rem;
     margin-bottom: 0;
     border: none;
+    border-radius: 15px;
+
 }
 
 input {
@@ -33,8 +46,41 @@ input {
     width: 40%;
     height: 100%;
     background-color: rgb(68, 67, 133);
+    border-radius: 20px;
 }
 
 .date {
+    border: none;
+    margin: 2em;
+    width: 30%;
+    padding: 0.3em 0.5em;
+    border-radius: 5px;
+    
+}
+
+.priority {
     margin-bottom: 2em;
+    width: 80%;
+}
+
+select {
+    border: 5px;
+    padding: 0.3em 0.7em;
+    border-radius: 5px;
+
+}
+
+button {
+    border: none;
+    margin: 1em;
+    padding: 0.8em 1em;
+    border-radius: 5px;
+    font-weight: 900;
+
+}
+
+.datePriorityContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

@@ -22,6 +22,8 @@ export function defaultToDo() {
     
     const projectsDiv = document.createElement("h3");
     projectsDiv.textContent = blankToDo().projectTitle;
+    projectsDiv.classList.add("taskTitle");
+    
     
     const inputTitle = document.createElement("input");
     inputTitle.classList.add("inputTitle");
@@ -35,6 +37,7 @@ export function defaultToDo() {
 
     const projectsDivBody = document.createElement("h4");
     projectsDivBody.textContent = blankToDo().projectBody;
+    projectsDivBody.classList.add("taskBody")
     toDoContainer.appendChild(projectsDivBody);
 
     const inputBody = document.createElement("input");
@@ -48,15 +51,22 @@ export function defaultToDo() {
 
     // Due date, priority and checklist
 
+    // Date and priority container
+
+    const datePriorityContainer = document.createElement("div");
+    datePriorityContainer.classList.add("datePriorityContainer");
+    toDoContainer.appendChild(datePriorityContainer);
+
     const dueDateInput = document.createElement("input");
     dueDateInput.type = "date";
     dueDateInput.classList.add("date");
     dueDateInput.value = "2023-01-01"
-    toDoContainer.appendChild(dueDateInput);
+    datePriorityContainer.appendChild(dueDateInput);
 
     const priorityInput = document.createElement("select");
-    priorityInput.id = "priority";
-    toDoContainer.appendChild(priorityInput);
+    priorityInput.classList.add = "priority";
+    priorityInput.value = "Low"
+    datePriorityContainer.appendChild(priorityInput);
 
     //Create array of options to be added
     let optionsArray = ["Low","Middle","High","Urgent"];
@@ -65,7 +75,7 @@ export function defaultToDo() {
     for (let i = 0; i < optionsArray.length; i++) {
         let option = document.createElement("option");
         option.value = optionsArray[i];
-        option.text = array[i];
+        option.text = optionsArray[i];
         priorityInput.appendChild(option);
     }
 
@@ -100,12 +110,6 @@ export function defaultToDo() {
         
 
     })
-
-    const createNewToDoBtn = document.createElement("button");
-    createNewToDoBtn.textContent = "New ToDo";
-    createNewToDoBtn.classList.add("newToDo");
-    toDoContainer.appendChild(createNewToDoBtn);
-
 
     createNewToDoBtn.addEventListener("click", function () {
         console.log("this is the title value " + inputTitle.value);
