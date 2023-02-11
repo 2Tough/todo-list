@@ -2,8 +2,8 @@ export const blankToDo = () => {
     
     const projectsArrayTitle = [];
     const projectsArrayBody = [];
-    let projectTitle = "Project name";
-    let projectBody = "Project body";
+    let projectTitle = "Task title";
+    let projectBody = "Description";
     projectsArrayTitle.push(projectTitle)
     projectsArrayBody.push(projectBody)
 

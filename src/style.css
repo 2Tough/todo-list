@@ -3,6 +3,7 @@ body {
 }
 
 .inputContainer {
+    
     display: flex;
     flex-direction: column;
     width: 80%;
@@ -11,6 +12,8 @@ body {
 
 .inputTitle {
     border: none;
+    
+    
 }
 
 .inputBody {
@@ -25,3 +28,13 @@ input {
     margin-bottom: 0;
 }
 
+.toDoContainer {
+    text-align: center;
+    width: 40%;
+    height: 100%;
+    background-color: rgb(68, 67, 133);
+}
+
+.date {
+    margin-bottom: 2em;
+}
