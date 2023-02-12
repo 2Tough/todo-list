@@ -79,24 +79,6 @@ export function defaultToDo() {
         priorityInput.appendChild(option);
     }
 
-    //Create and append the option
-// for (var i = 0; i < array.length; i++) {
-//     var option = document.createElement("option");
-//     option.value = array[i];
-//     option.text = array[i];
-//     selectList.appendChild(option);
-// }
-
-
-
-
-//     <label for="start">Start date:</label>
-
-// <input type="date" id="start" name="trip-start"
-//        value="2018-07-22"
-//        min="2018-01-01" max="2018-12-31"></input>
-
-
     // Submit button
 
     const submitBtn = document.createElement("button");
@@ -104,25 +86,16 @@ export function defaultToDo() {
     submitBtn.classList.add("submitBtn");
     toDoContainer.appendChild(submitBtn);
 
-    submitBtn.addEventListener("click", function () {
-        const titleValue = inputTitle.value
-        const bodyValue = inputBody.value
-        
-
-    })
-
-    createNewToDoBtn.addEventListener("click", function () {
-        console.log("this is the title value " + inputTitle.value);
-        console.log("this is the body value " + inputBody.value);
-
-        newToDo(inputTitle, inputBody, "tomorrow", "High", "Done");
-
-        console.log(newToDo)
-        console.log(toDoArray)
     
 
-    })
 
 
-    console.log(newToDo)
+    
+    return inputTitle,
+           inputBody,
+           dueDateInput,
+           priorityInput,
+           submitBtn
+
+    console.log(newToDo().inputTitle)
 }

@@ -1,4 +1,16 @@
+import { defaultToDo } from "./default-to-do";
+
 export const blankToDo = () => {
+
+    submitBtn.addEventListener("click", function() {
+        const titleValue = inputTitle.value
+        const bodyValue = inputBody.value
+
+        console.log(inputTitle)
+        console.log(bodyValue)
+        console.log("Test")
+
+    })
     
     const projectsArrayTitle = [];
     const projectsArrayBody = [];
