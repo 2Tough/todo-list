@@ -1,5 +1,6 @@
 import { defaultToDo } from "./default-to-do";
 
+
 let toDoArray = [];
 
 
@@ -14,8 +15,7 @@ export const newToDo = (name) => {
         CheckList
         
     };
-    
-    
+
     const changeTitle = () => {
         getNewToDo.Title = newTitle;
     }

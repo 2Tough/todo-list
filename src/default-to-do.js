@@ -86,16 +86,26 @@ export function defaultToDo() {
     submitBtn.classList.add("submitBtn");
     toDoContainer.appendChild(submitBtn);
 
-    
+    submitBtn.addEventListener("click", function() {
+        const titleValue = inputTitle.value
+        const bodyValue = inputBody.value
 
 
+        console.log("Test")
 
+        return inputTitle, bodyValue
+
+    })
+
+
+    let toDoArray1 = [inputTitle.value];
     
     return inputTitle,
            inputBody,
            dueDateInput,
            priorityInput,
-           submitBtn
+           submitBtn,
+           toDoArray1
 
     console.log(newToDo().inputTitle)
 }
