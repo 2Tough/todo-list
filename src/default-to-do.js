@@ -72,6 +72,8 @@ export function defaultToDo() {
 
     })
 
+    
 
-    console.log(newToDo)
+
+    
 }
