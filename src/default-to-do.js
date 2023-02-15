@@ -107,5 +107,5 @@ export function defaultToDo() {
            submitBtn,
            toDoArray1
 
-    console.log(newToDo().inputTitle)
+    
 }
