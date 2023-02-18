@@ -48,6 +48,9 @@ export const newToDo = (name) => {
     const noteOne = getNewToDo("Buy meat", "I have to buy meat to eat after workouts", "02/15/2023", "High", "Pending") 
     const noteTwo = getNewToDo("Pick up vitamins", "I have to pick up the vitamins I bought", "02/17/2023", "High", "Pending") 
 
+    console.log(noteOne)
+    console.log(noteTwo)
+
 
     return 
         changeTitle,
