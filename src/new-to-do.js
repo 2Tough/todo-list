@@ -6,15 +6,22 @@ let toDoArray = [];
 
 //New ToDo factory
 
-export const newToDo = (name) => {
+export const newToDo = (() => {
+
     const getNewToDo = (Title, Description, DueDate, Priority, CheckList) => {
-        Title
-        Description
-        DueDate
-        Priority
-        CheckList
-        
-    };
+        const getNew = () => {
+            Title
+            Description
+            DueDate
+            Priority
+            CheckList
+             
+         };
+
+         return {Title, Description, DueDate, Priority, CheckList}
+
+    }
+    
 
     const changeTitle = () => {
         getNewToDo.Title = newTitle;
@@ -45,11 +52,12 @@ export const newToDo = (name) => {
     }
 
 
-    const noteOne = getNewToDo("Buy meat", "I have to buy meat to eat after workouts", "02/15/2023", "High", "Pending") 
+    const noteOne = getNewToDo("Buy meat", "I have to buy meat to eat after workouts", "02/15/2023", "High", "Pending");
     const noteTwo = getNewToDo("Pick up vitamins", "I have to pick up the vitamins I bought", "02/17/2023", "High", "Pending") 
 
     console.log(noteOne)
     console.log(noteTwo)
+    console.log("test")
 
 
     return 
@@ -64,6 +72,6 @@ export const newToDo = (name) => {
  //TODO: Test factories and remaining elements.   
 
     
-}
+})()
 
 // Create constructor or class here
