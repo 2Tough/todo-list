@@ -1,11 +1,9 @@
-import { blankToDo } from "./blank-to-do"
-import { defaultToDo } from "./default-to-do"
-import { newToDo } from "./new-to-do"
+import { defaultTodo } from "./defaultTodo";
 
-blankToDo();
-
-defaultToDo();
+defaultTodo();
 
 
 
-const contentDiv = document.getElementById("main-content")
+
+
+const contentDiv = document.getElementById('main-content')
