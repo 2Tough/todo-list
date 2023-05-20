@@ -3,6 +3,11 @@
 
 export function defaultTodo() {
 
+    const todoDefaultFolder = (() => {
+        let defaultFolder = createFolder('Default')
+        let folders = [defaultFolder]
+    })()
+
 
     const todoFactory = (title, description, priority, dueDate) => {
         return {
@@ -11,6 +16,16 @@ export function defaultTodo() {
             priority,
             dueDate
         }
+    }
+    
+    const createFolderFactory = (name) => {
+        return {
+            name
+        }
+    }
+
+    function folderFactory(name) {
+        todoDependencies.folders.push(createFolderFactory(name))
     }
 
     const note1 = todoFactory("Buy eggs", "Need to get some protein", "1", "Today")
