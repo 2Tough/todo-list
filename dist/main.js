@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _defaultTodo__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./defaultTodo */ \"./src/defaultTodo.js\");\n\n\n(0,_defaultTodo__WEBPACK_IMPORTED_MODULE_0__.defaultTodo)();\n\n\n\n\n\nconst contentDiv = document.getElementById('main-content')\n\n//# sourceURL=webpack://todo-list/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _defaultTodo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./defaultTodo.js */ \"./src/defaultTodo.js\");\n\n\nconsole.log('test master')\n\n;(0,_defaultTodo_js__WEBPACK_IMPORTED_MODULE_0__.defaultTodo)()\n\n//# sourceURL=webpack://todo-list/./src/index.js?");
 
 /***/ })
 

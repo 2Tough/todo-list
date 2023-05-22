@@ -1,9 +1,5 @@
-import { defaultTodo } from "./defaultTodo";
+import { defaultTodo } from "./defaultTodo.js"
 
-defaultTodo();
+console.log('test master')
 
-
-
-
-
-const contentDiv = document.getElementById('main-content')
+defaultTodo()
