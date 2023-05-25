@@ -1,5 +1,5 @@
 import { defaultTodo } from "./defaultTodo.js"
 
-console.log('test master')
+const contentDiv = document.getElementById('main-content');
 
 defaultTodo()
