@@ -2,21 +2,23 @@
 export function newTodo() {
     
     const contentDiv = document.getElementById('main-content');
+    
+    const sidePanelDiv = document.createElement('div');
+    sidePanelDiv.classList.add('sidePanelDiv');
+    contentDiv.appendChild(sidePanelDiv);
 
     const todoDiv = document.createElement('div');
-    contentDiv.appendChild(todoDiv);
+    todoDiv.classList.add('todoDiv')
+    sidePanelDiv.appendChild(todoDiv);
 
     const inputTodoTitle = document.createElement('input')
-    contentDiv.appendChild(inputTodoTitle);
 
     const inputTodoPriority = document.createElement('input')
-    contentDiv.appendChild(inputTodoPriority);
 
     const inputTodoDueDate = document.createElement('input')
-    contentDiv.appendChild(inputTodoDueDate);
 
     const inputTodoDFolder = document.createElement('input')
-    contentDiv.appendChild(inputTodoDFolder);
+    todoDiv.append(inputTodoDFolder, inputTodoDueDate, inputTodoPriority,inputTodoTitle );
     
 
 }

@@ -26,7 +26,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _defaultTodo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./defaultTodo.js */ \"./src/defaultTodo.js\");\n\n\nconst contentDiv = document.getElementById('main-content');\n\n(0,_defaultTodo_js__WEBPACK_IMPORTED_MODULE_0__.defaultTodo)()\n\n//# sourceURL=webpack://todo-list/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _defaultTodo_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./defaultTodo.js */ \"./src/defaultTodo.js\");\n/* harmony import */ var _newTodo_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./newTodo.js */ \"./src/newTodo.js\");\n\n\n\nconst contentDiv = document.getElementById('main-content');\n\n(0,_defaultTodo_js__WEBPACK_IMPORTED_MODULE_0__.defaultTodo)();\n(0,_newTodo_js__WEBPACK_IMPORTED_MODULE_1__.newTodo)();\n\n//# sourceURL=webpack://todo-list/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/newTodo.js":
+/*!************************!*\
+  !*** ./src/newTodo.js ***!
+  \************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   newTodo: () => (/* binding */ newTodo)\n/* harmony export */ });\n\nfunction newTodo() {\n    \n    const contentDiv = document.getElementById('main-content');\n    \n    const sidePanelDiv = document.createElement('div');\n    sidePanelDiv.classList.add('sidePanelDiv');\n    contentDiv.appendChild(sidePanelDiv);\n\n    const todoDiv = document.createElement('div');\n    todoDiv.classList.add('todoDiv')\n    sidePanelDiv.appendChild(todoDiv);\n\n    const inputTodoTitle = document.createElement('input')\n\n    const inputTodoPriority = document.createElement('input')\n\n    const inputTodoDueDate = document.createElement('input')\n\n    const inputTodoDFolder = document.createElement('input')\n    todoDiv.append(inputTodoDFolder, inputTodoDueDate, inputTodoPriority,inputTodoTitle );\n    \n\n}\n\n//# sourceURL=webpack://todo-list/./src/newTodo.js?");
 
 /***/ })
 

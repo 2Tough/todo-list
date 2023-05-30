@@ -1,3 +1,22 @@
 * {
     background-color: pink;
 }
+
+.sidePanelDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    margin-right: auto;
+    background-color: aqua;
+    width: 100%;
+
+}
+
+.todoDiv {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
