@@ -1,4 +1,7 @@
 
+import { defaultTodo } from "./defaultTodo.js"
+
+
 export function newTodo() {
     
     const contentDiv = document.getElementById('main-content');
@@ -106,7 +109,13 @@ export function newTodo() {
     const submitButton = document.createElement('button');
     submitButton.textContent = 'Create';
     submitButton.classList.add('submitButton');
-    
+    submitButton.onclick = createTodo;
+
+
+    function createTodo(e) {
+        e.preventDefault();
+        console.log('test')
+    }
 
     todoDiv.append(
                    createTodoText, 

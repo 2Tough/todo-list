@@ -1,4 +1,10 @@
+import { newTodo } from "./newTodo.js"
+
 export function defaultTodo() {
+
+    const submitBtn = document.getElementsByClassName('submitButton');
+    
+
 
     const createFolderFactory = (name) => {
         return {
