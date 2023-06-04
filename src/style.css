@@ -1,15 +1,42 @@
 * {
     background-color: pink;
+    
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Main content panels */
+
+.contentDiv {
+    background-color: aqua;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-areas: 
+        "side-panel main-content main-content"
+        "folder-panel main-content main-content";
+    grid-gap: 1em;
+        
+}
+
+.mainPanelDiv {
+    grid-area: main-content;
+    border-left: black 2px solid;
+}
+
+.folderContentDiv {
+    background-color: white;
+    grid-area: folder-panel;
+    border-right: black 2px solid;
+
 }
 
 .sidePanelDiv {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    margin-right: auto;
-    background-color: aqua;
-    max-width: 30%;
+    grid-area: side-panel;
     border-right: black 2px solid;
+    display: flex;
+    justify-content: center;
+    
 
 }
 
@@ -17,14 +44,9 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    
     margin: auto;
-    
     width: 80%;
     padding: 0.5em;
-   
-
-
 }
 
 input {

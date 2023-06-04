@@ -2,10 +2,21 @@
 export function newTodo() {
     
     const contentDiv = document.getElementById('main-content');
-    
+    contentDiv.classList.add('contentDiv');
+
+    const mainPanelDiv = document.createElement('div');
+    mainPanelDiv.classList.add('mainPanelDiv');
+    mainPanelDiv.textContent = 'Folder content here'
+    contentDiv.appendChild(mainPanelDiv);
+
     const sidePanelDiv = document.createElement('div');
     sidePanelDiv.classList.add('sidePanelDiv');
     contentDiv.appendChild(sidePanelDiv);
+
+    const folderContentDiv = document.createElement('div');
+    folderContentDiv.classList.add('folderContentDiv');
+    folderContentDiv.textContent = 'Folders displayed here'
+    contentDiv.appendChild(folderContentDiv);
 
     const todoDiv = document.createElement('div');
     todoDiv.classList.add('todoDiv');
