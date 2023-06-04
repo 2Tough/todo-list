@@ -103,13 +103,19 @@ export function newTodo() {
     inputTodoDateFolderLabel.classList.add('labels');
     const inputTodoDFolder = document.createElement('input');
 
+    const submitButton = document.createElement('button');
+    submitButton.textContent = 'Create';
+    submitButton.classList.add('submitButton');
+    
+
     todoDiv.append(
                    createTodoText, 
                    inputTodoTitleLabel, inputTodoTitle, 
                    inputTodoDescriptionLabel, inputTodoDescription,
                    inputTodoPriorityLabel, inputTodoPriority,
                    inputTodoDateLabel, inputTodoDueDate,
-                   inputTodoDateFolderLabel, inputTodoDFolder );
+                   inputTodoDateFolderLabel, inputTodoDFolder,
+                   submitButton );
     
 
 }

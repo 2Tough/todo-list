@@ -25,6 +25,8 @@
     padding: 2em;
 }
 
+/* Folders section */
+
 .folderContentDiv {
     background-color: white;
     grid-area: folder-panel;
@@ -49,6 +51,8 @@
 
 }
 
+/* Todo section */
+
 .todoDiv {
     display: flex;
     flex-direction: column;
@@ -56,6 +60,20 @@
     margin: auto;
     width: 80%;
     padding: 0.5em;
+}
+
+.submitButton {
+    margin-top: 1em;
+    cursor: pointer;
+    border: black 1px solid;
+    border-radius: 5px;
+    padding: 0.3em 0.7em;
+    background-color: white;
+    font-size: 1.1rem;
+}
+
+.submitButton:hover {
+    background-color: lightgray;
 }
 
 input {
