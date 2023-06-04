@@ -8,15 +8,30 @@
     justify-content: start;
     margin-right: auto;
     background-color: aqua;
-    width: 100%;
+    max-width: 30%;
+    border-right: black 2px solid;
 
 }
 
 .todoDiv {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    
+    margin: auto;
+    
+    width: 80%;
+    padding: 0.5em;
+   
+
+
+}
+
+input {
+    border: none;
     background-color: white;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
+}
+
+.labels {
+    padding: 0.5em;
 }
