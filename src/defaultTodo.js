@@ -4,7 +4,10 @@ export function defaultTodo() {
 
     const submitBtn = document.getElementsByClassName('submitButton');
     
-
+    function createTodo(e) {
+        e.preventDefault();
+        console.log('test2')
+    }
 
     const createFolderFactory = (name) => {
         return {

@@ -2,6 +2,7 @@
 import { defaultTodo } from "./defaultTodo.js"
 
 
+
 export function newTodo() {
     
     const contentDiv = document.getElementById('main-content');
@@ -10,7 +11,7 @@ export function newTodo() {
     // Main panel
     const mainPanelDiv = document.createElement('div');
     mainPanelDiv.classList.add('mainPanelDiv');
-    mainPanelDiv.textContent = 'Folder content here'
+    mainPanelDiv.textContent = 'Folder content:'
     contentDiv.appendChild(mainPanelDiv);
 
     // Main panel divs
@@ -26,21 +27,25 @@ export function newTodo() {
 
     // Title div
     const mainPanelTitle = document.createElement('h3');
+    mainPanelTitle.textContent = "Title";
     const mainPanelTitleText = document.createElement('p');
     mainPanelTitleDiv.appendChild(mainPanelTitle, mainPanelTitleText);
 
     // Description div
     const mainPanelDescription = document.createElement('h3');
+    mainPanelDescription.textContent = "Description"
     const mainPanelDescriptionText = document.createElement('p');
     mainPanelTitleDiv.appendChild(mainPanelDescription, mainPanelDescriptionText);
 
     // Priority div
     const mainPanelPriority = document.createElement('h3');
+    mainPanelPriority.textContent = "Priority";
     const mainPanelPriorityText = document.createElement('p');
     mainPanelTitleDiv.appendChild(mainPanelPriority, mainPanelPriorityText);
 
     // Date div
     const mainPanelDate = document.createElement('h3');
+    mainPanelDate.textContent = "Date";
     const mainPanelDateText = document.createElement('p');
     mainPanelTitleDiv.appendChild(mainPanelDate, mainPanelDateText);
 
@@ -60,13 +65,32 @@ export function newTodo() {
     const folderContentDiv = document.createElement('div');
     folderContentDiv.classList.add('folderContentDiv');
     contentDiv.appendChild(folderContentDiv);
-
-    const imageFolder = document.createElement('img');
-    imageFolder.classList.add('folderDiv');
-    imageFolder.src = '../images/folder.png';
+    
+    // Folder title and icon div
+    const folderIconTextContainer = document.createElement('div');
+    folderIconTextContainer.classList.add('folderIconTextContainer');
     
 
-    folderContentDiv.appendChild(imageFolder);
+    // Text
+    const folderTextContainer = document.createElement('p');
+    folderTextContainer.classList.add('folderTextContainer');
+    folderIconTextContainer.textContent = "Default";
+    
+
+    // Icon
+    const imageFolder = document.createElement('img');
+    imageFolder.classList.add('folderDiv');
+    imageFolder.innerHTML = "Default";
+    imageFolder.src = '../images/folder.png';
+
+
+    folderIconTextContainer.appendChild(imageFolder, folderTextContainer);
+    folderContentDiv.appendChild(folderIconTextContainer);
+
+    document.querySelectorAll(".folderDiv").forEach(folder => folder.addEventListener("click", ()=> {
+        console.log('Todo folder clicked!')
+    })
+)
 
     // Todo container
     const todoDiv = document.createElement('div');
@@ -107,6 +131,7 @@ export function newTodo() {
     const inputTodoDFolder = document.createElement('input');
 
     const submitButton = document.createElement('button');
+    
     submitButton.textContent = 'Create';
     submitButton.classList.add('submitButton');
     submitButton.onclick = createTodo;
@@ -115,6 +140,7 @@ export function newTodo() {
     function createTodo(e) {
         e.preventDefault();
         console.log('test')
+        
     }
 
     todoDiv.append(
@@ -126,5 +152,5 @@ export function newTodo() {
                    inputTodoDateFolderLabel, inputTodoDFolder,
                    submitButton );
     
-
+    return createTodo;
 }

@@ -36,9 +36,24 @@
 .folderDiv {
     max-width:30%;
     max-height: 30%;
+    cursor: pointer; 
+    background-color: white;
+
+}
+
+
+
+.folderIconTextContainer {
+    display: flex;
+    flex-direction: column;
     background-color: white;
     margin: 1em;
-    cursor: pointer; 
+
+
+}
+
+.folderTextContainer {
+    margin-top: -2em;
 }
 
 
