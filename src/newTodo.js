@@ -3,6 +3,8 @@ import { defaultTodo } from "./defaultTodo.js"
 
 
 
+export let array = [];
+
 export function newTodo() {
     
     const contentDiv = document.getElementById('main-content');
@@ -16,7 +18,7 @@ export function newTodo() {
 
     // Main panel divs
 
-    const mainPanelTodoDiv = document.createElement('div');
+    const mainPanelTodoDiv = document.createElement('form');
     mainPanelTodoDiv.classList.add('mainPanelTodoDiv');
     mainPanelDiv.appendChild(mainPanelTodoDiv);
 
@@ -136,11 +138,30 @@ export function newTodo() {
     submitButton.classList.add('submitButton');
     submitButton.onclick = createTodo;
 
+    let todoObject = {
+        title: "",
+        description: "",
+        priority: "",
+        dueDate: "",
+        folder: ""
+    }
+
 
     function createTodo(e) {
         e.preventDefault();
-        console.log('test')
         
+        todoObject = {
+            title: inputTodoTitle.value,
+            description: inputTodoDescription.value,
+            priority: inputTodoPriority.value,
+            dueDate: inputTodoDueDate.value,
+            folder: inputTodoDFolder.value
+        }
+
+        
+        array.push(todoObject)
+        
+
     }
 
     todoDiv.append(

@@ -1,12 +1,26 @@
 import { newTodo } from "./newTodo.js"
+import { array } from "./newTodo.js"
+
 
 export function defaultTodo() {
+
+    
 
     const submitBtn = document.getElementsByClassName('submitButton');
     
     function createTodo(e) {
         e.preventDefault();
         console.log('test2')
+
+        todoObject = {
+            title: inputTodoTitle.value,
+            description: inputTodoDescription.value,
+            priority: inputTodoPriority.value,
+            dueDate: inputTodoDueDate.value,
+            folder: inputTodoDFolder.value
+        }
+
+        console.log(array)
     }
 
     const createFolderFactory = (name) => {
