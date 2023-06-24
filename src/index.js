@@ -1,7 +1,6 @@
-import { defaultTodo } from "./defaultTodo.js"
-import { newTodo } from "./newTodo.js"
+import { DOM_manipulation } from "./DOM_manipulation.js"
+import { DOM_creation } from "./DOM_creation.js"
 
-const contentDiv = document.getElementById('main-content');
 
-defaultTodo();
-newTodo();
+DOM_creation();
+DOM_manipulation();

@@ -1,11 +1,11 @@
 
-import { defaultTodo } from "./defaultTodo.js"
+import { DOM_manipulation } from "./DOM_manipulation.js"
 
 
 
 export let array = [];
 
-export function newTodo() {
+export function DOM_creation() {
     
     const contentDiv = document.getElementById('main-content');
     contentDiv.classList.add('contentDiv');
@@ -17,10 +17,22 @@ export function newTodo() {
     contentDiv.appendChild(mainPanelDiv);
 
     // Main panel divs
+    
 
     const mainPanelTodoDiv = document.createElement('form');
     mainPanelTodoDiv.classList.add('mainPanelTodoDiv');
     mainPanelDiv.appendChild(mainPanelTodoDiv);
+
+//     `
+//     <div class="mainPanelTodoDiv">
+//         <form>
+//         <h3>Title</h3>
+
+
+//         </form>
+//     </div>
+
+// `
 
     const mainPanelTitleDiv = document.createElement('div');
     const mainPanelDescriptionDiv = document.createElement('div');
@@ -61,6 +73,21 @@ export function newTodo() {
     // Side panel
     const sidePanelDiv = document.createElement('div');
     sidePanelDiv.classList.add('sidePanelDiv');
+    
+
+    
+    // sidePanelDiv.innerHTML= `
+    // <div class="folderContentDiv">
+    //     <div class="folderIconTextContainer">
+    //         <p class="folderTextContainer">Default</p>
+    //         <img class="folderDiv" src = '../images/folder.png'>
+        
+    //     </div>
+        
+
+        
+    // </div>`
+
     contentDiv.appendChild(sidePanelDiv);
 
     // Folder panel
@@ -96,47 +123,44 @@ export function newTodo() {
 
     // Todo container
     const todoDiv = document.createElement('div');
-    todoDiv.classList.add('todoDiv');
     sidePanelDiv.appendChild(todoDiv);
 
-    // Create todo text
+    todoDiv.innerHTML =
+    `
+    <div class="todoDiv">
+        <form>
+        <h3 class="createTodoText">Create a new Todo</h3>
 
-    const createTodoText = document.createElement('h3');
-    createTodoText.classList.add('createTodoText');
-    createTodoText.textContent = "Create a new Todo";
+        <label for="todoTitle">Title</label>
+        <input type="text" id="todoTitle"></input>
+
+        <label for="todoDescription">Description</label>
+        <input type="text" id="todoDescription"></input>  
+
+        <label for="todoPriority">Priority</label>
+        <select type="text" id="todoPriority">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        
+        </select>    
+
+        <label for="todoDate">Date</label>
+        <input type="Date" id="todoDate"></input>    
+
+        <label for="todoFolder">Folder</label>
+        <input type="text" id="todoFolder"></input>   
+        
+        <button class="btn submitButton" id="submitBtn">Create</button>
+        <button class="btn cancelButton" id="cancelBtn>Cancel</button>
+
+        </form>
+    </div>
+
+    `
+
+
     
-    // Todo inputs
-
-    const inputTodoTitleLabel = document.createElement('label');
-    inputTodoTitleLabel.textContent = 'Title';
-    inputTodoTitleLabel.classList.add('labels');
-    const inputTodoTitle = document.createElement('input');
-    
-    const inputTodoDescriptionLabel = document.createElement('label');
-    inputTodoDescriptionLabel.textContent = 'Description';
-    inputTodoDescriptionLabel.classList.add('labels');
-    const inputTodoDescription = document.createElement('input');
-
-    const inputTodoPriorityLabel = document.createElement('label');
-    inputTodoPriorityLabel.textContent = 'Priority';
-    inputTodoPriorityLabel.classList.add('labels');
-    const inputTodoPriority = document.createElement('input');
-
-    const inputTodoDateLabel = document.createElement('label');
-    inputTodoDateLabel.textContent = 'Date';
-    inputTodoDateLabel.classList.add('labels');
-    const inputTodoDueDate = document.createElement('input');
-
-    const inputTodoDateFolderLabel = document.createElement('label');
-    inputTodoDateFolderLabel.textContent = 'Folder';
-    inputTodoDateFolderLabel.classList.add('labels');
-    const inputTodoDFolder = document.createElement('input');
-
-    const submitButton = document.createElement('button');
-    
-    submitButton.textContent = 'Create';
-    submitButton.classList.add('submitButton');
-    submitButton.onclick = createTodo;
 
     let todoObject = {
         title: "",
@@ -147,31 +171,24 @@ export function newTodo() {
     }
 
 
-    function createTodo(e) {
-        e.preventDefault();
+    // function createTodo(e) {
+    //     e.preventDefault();
         
-        todoObject = {
-            title: inputTodoTitle.value,
-            description: inputTodoDescription.value,
-            priority: inputTodoPriority.value,
-            dueDate: inputTodoDueDate.value,
-            folder: inputTodoDFolder.value
-        }
+    //     todoObject = {
+    //         title: inputTodoTitle.value,
+    //         description: inputTodoDescription.value,
+    //         priority: inputTodoPriority.value,
+    //         dueDate: inputTodoDueDate.value,
+    //         folder: inputTodoDFolder.value
+    //     }
 
         
-        array.push(todoObject)
+    //     array.push(todoObject)
         
 
-    }
+    // }
 
-    todoDiv.append(
-                   createTodoText, 
-                   inputTodoTitleLabel, inputTodoTitle, 
-                   inputTodoDescriptionLabel, inputTodoDescription,
-                   inputTodoPriorityLabel, inputTodoPriority,
-                   inputTodoDateLabel, inputTodoDueDate,
-                   inputTodoDateFolderLabel, inputTodoDFolder,
-                   submitButton );
+ 
     
-    return createTodo;
+    
 }

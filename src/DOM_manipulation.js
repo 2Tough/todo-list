@@ -1,13 +1,14 @@
-import { newTodo } from "./newTodo.js"
-import { array } from "./newTodo.js"
+import { DOM_creation } from "./DOM_creation.js"
+import { array } from "./DOM_creation.js"
 
 
-export function defaultTodo() {
+export function DOM_manipulation() {
 
     
 
-    const submitBtn = document.getElementsByClassName('submitButton');
+    const submitBtn = document.getElementById('submitBtn');
     
+
     function createTodo(e) {
         e.preventDefault();
         console.log('test2')
@@ -86,6 +87,12 @@ export function defaultTodo() {
         
     // )()
     
+    submitBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        console.log('testing btn')
+     })
+
     
    return todoFactory
 
