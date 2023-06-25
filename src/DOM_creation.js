@@ -13,27 +13,24 @@ export function DOM_creation() {
     // Main panel
     const mainPanelDiv = document.createElement('div');
     mainPanelDiv.classList.add('mainPanelDiv');
-    mainPanelDiv.textContent = 'Folder content:'
+    
+    
+    const mainPanelFolderName = document.createElement('h2');
+    mainPanelFolderName.setAttribute("id", "mainPanelFolderName");
+    mainPanelFolderName.textContent = 'Folder content for:';
+    mainPanelDiv.appendChild(mainPanelFolderName);
+
     contentDiv.appendChild(mainPanelDiv);
 
     // Main panel divs
     
 
-    const mainPanelTodoDiv = document.createElement('form');
+    const mainPanelTodoDiv = document.createElement('div');
     mainPanelTodoDiv.classList.add('mainPanelTodoDiv');
     mainPanelDiv.appendChild(mainPanelTodoDiv);
 
-//     `
-//     <div class="mainPanelTodoDiv">
-//         <form>
-//         <h3>Title</h3>
 
-
-//         </form>
-//     </div>
-
-// `
-
+    // Divs for each section
     const mainPanelTitleDiv = document.createElement('div');
     const mainPanelDescriptionDiv = document.createElement('div');
     const mainPanelPriorityDiv = document.createElement('div');
@@ -43,31 +40,35 @@ export function DOM_creation() {
     const mainPanelTitle = document.createElement('h3');
     mainPanelTitle.textContent = "Title";
     const mainPanelTitleText = document.createElement('p');
+    mainPanelTitle.setAttribute("id", "mainPanelTitleText");
     mainPanelTitleDiv.appendChild(mainPanelTitle, mainPanelTitleText);
 
     // Description div
     const mainPanelDescription = document.createElement('h3');
     mainPanelDescription.textContent = "Description"
     const mainPanelDescriptionText = document.createElement('p');
-    mainPanelTitleDiv.appendChild(mainPanelDescription, mainPanelDescriptionText);
+    mainPanelDescriptionText.setAttribute("id", "mainPanelDescriptionText");
+    mainPanelDescriptionDiv.appendChild(mainPanelDescription, mainPanelDescriptionText);
 
     // Priority div
     const mainPanelPriority = document.createElement('h3');
     mainPanelPriority.textContent = "Priority";
     const mainPanelPriorityText = document.createElement('p');
-    mainPanelTitleDiv.appendChild(mainPanelPriority, mainPanelPriorityText);
+    mainPanelPriority.setAttribute("id", "mainPanelPriority");
+    mainPanelPriorityDiv.appendChild(mainPanelPriority, mainPanelPriorityText);
 
     // Date div
     const mainPanelDate = document.createElement('h3');
     mainPanelDate.textContent = "Date";
     const mainPanelDateText = document.createElement('p');
-    mainPanelTitleDiv.appendChild(mainPanelDate, mainPanelDateText);
+    mainPanelDate.setAttribute("id", "mainPanelDateText");
+    mainPanelDateDiv.appendChild(mainPanelDate, mainPanelDateText);
 
-    mainPanelTodoDiv.appendChild(mainPanelTitleDiv, 
-                                 mainPanelDescriptionDiv,
-                                 mainPanelPriorityDiv,
-                                 mainPanelDateDiv
-                                 )
+    mainPanelTodoDiv.append(mainPanelTitleDiv, 
+                            mainPanelDescriptionDiv,
+                            mainPanelPriorityDiv,
+                            mainPanelDateDiv
+                            )
 
 
     // Side panel
@@ -128,17 +129,17 @@ export function DOM_creation() {
     todoDiv.innerHTML =
     `
     <div class="todoDiv">
-        <form>
+        <form id="todoForm" role="form">
         <h3 class="createTodoText">Create a new Todo</h3>
 
         <label for="todoTitle">Title</label>
-        <input type="text" id="todoTitle"></input>
+        <input type="text" id="todoTitle" required></input>
 
         <label for="todoDescription">Description</label>
-        <input type="text" id="todoDescription"></input>  
+        <input type="text" id="todoDescription" required></input>  
 
         <label for="todoPriority">Priority</label>
-        <select type="text" id="todoPriority">
+        <select type="text" id="todoPriority" required>
             <option value="low">Low</option>
             <option value="medium">Medium</option>
             <option value="high">High</option>
@@ -146,10 +147,10 @@ export function DOM_creation() {
         </select>    
 
         <label for="todoDate">Date</label>
-        <input type="Date" id="todoDate"></input>    
+        <input type="Date" id="todoDate" required></input>    
 
         <label for="todoFolder">Folder</label>
-        <input type="text" id="todoFolder"></input>   
+        <input type="text" id="todoFolder" required></input>   
         
         <button class="btn submitButton" id="submitBtn">Create</button>
         <button class="btn cancelButton" id="cancelBtn>Cancel</button>
@@ -159,36 +160,4 @@ export function DOM_creation() {
 
     `
 
-
-    
-
-    let todoObject = {
-        title: "",
-        description: "",
-        priority: "",
-        dueDate: "",
-        folder: ""
-    }
-
-
-    // function createTodo(e) {
-    //     e.preventDefault();
-        
-    //     todoObject = {
-    //         title: inputTodoTitle.value,
-    //         description: inputTodoDescription.value,
-    //         priority: inputTodoPriority.value,
-    //         dueDate: inputTodoDueDate.value,
-    //         folder: inputTodoDFolder.value
-    //     }
-
-        
-    //     array.push(todoObject)
-        
-
-    // }
-
- 
-    
-    
 }

@@ -4,26 +4,29 @@ import { array } from "./DOM_creation.js"
 
 export function DOM_manipulation() {
 
-    
+    // Variables for side panel
+
+    let todoForm = document.getElementById('todoForm')
+
+    const todoTitle = document.getElementById('todoTitle')    
+    const todoDescription = document.getElementById('todoDescription')
+    const todoPriority = document.getElementById('todoPriority')
+    const todoDate = document.getElementById('todoDate')
+    const todoFolder = document.getElementById('todoFolder')
 
     const submitBtn = document.getElementById('submitBtn');
+    const cancelBtn = document.getElementById('cancelBtn');
+
+    // Variables for main panel
+
+    const mainPanelTitle = document.getElementById("mainPanelTitleText");
+    const mainPanelDescription = document.getElementById("mainPanelDescriptionText");
+    const mainPanelPriority = document.getElementById("mainPanelPriorityText");
+    const mainPanelDate = document.getElementById("mainPanelDateText");
+    const mainPanelFolder= document.getElementById("mainPanelDiv");
+
+    // Folder factory
     
-
-    function createTodo(e) {
-        e.preventDefault();
-        console.log('test2')
-
-        todoObject = {
-            title: inputTodoTitle.value,
-            description: inputTodoDescription.value,
-            priority: inputTodoPriority.value,
-            dueDate: inputTodoDueDate.value,
-            folder: inputTodoDFolder.value
-        }
-
-        console.log(array)
-    }
-
     const createFolderFactory = (name) => {
         return {
             folder: 
@@ -45,7 +48,7 @@ export function DOM_manipulation() {
         }
     }
     
-
+    // Todo factory
     
     function createTodo(title, description, priority, dueDate, folder) {
         let todo = todoFactory(title, description, priority, dueDate)
@@ -60,40 +63,50 @@ export function DOM_manipulation() {
         return todo
     }
 
+    // Todo placeholders
+
     const note0 = createTodo("Go to church", "Need God", "1", "today", "Mass")
-    const notetest = createTodo("test", "test", "1", "test", "")
-    
-    
-    console.log(foldersDirectory)
-
-    
-    // console.log(note0)
-    // console.log(notetest)
-    
-
-
-
     const note1 = todoFactory("Buy eggs", "Need to get some protein", "1", "Today")
     const note2 = todoFactory("Train", "I need to train", "1", "")
     const note3 = todoFactory("Program", "Need to program", "1", "")
-
-    // console.log(note1, note2, note3)
-
-    // const newTodo = (() => {
-    //     const noteOne = todoFactory("Get water", "Need more water", "1", "")
     
-    //     console.log(noteOne)
-    // }
-        
-    // )()
+    console.log(foldersDirectory)
+    
+    let array = []
+    let todoObject = {
+        title: "",
+        description: "",
+        priority: "",
+        dueDate: "",
+        folder: ""
+    }
+
+    // Submit Todo button 
     
     submitBtn.addEventListener('click', function(e) {
         e.preventDefault();
+
+        todoObject = {
+                title: todoTitle.value,
+                description: todoDescription.value,
+                priority: todoPriority.value,
+                dueDate: todoDate.value,
+                folder: todoFolder.value
+                }
         
-        console.log('testing btn')
+        
+        // Saving to localStorage
+        array.push(todoObject)
+        let jsonStorage = JSON.stringify(array)
+        localStorage.setItem('form', jsonStorage)
+        console.log('test object', todoObject)
+        todoForm.reset()
      })
 
-    
-   return todoFactory
+     // Display Todo in main section
+
+    //  if (localStorage.getItem('form')) {
+    //     mainPanelTitle.textContent = "testing"
+    //  }
 
 }
