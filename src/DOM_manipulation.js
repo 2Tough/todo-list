@@ -96,17 +96,20 @@ export function DOM_manipulation() {
         
         
         // Saving to localStorage
-        array.push(todoObject)
-        let jsonStorage = JSON.stringify(array)
-        localStorage.setItem('form', jsonStorage)
-        console.log('test object', todoObject)
-        todoForm.reset()
+        if (localStorage.getItem('todo') === null) {
+            array = [];
+        } else {
+            array =  JSON.parse(localStorage.getItem('todo'))
+        }
+        array.push(todoObject);
+        localStorage.setItem('todo', JSON.stringify(array))
+        
      })
+    
 
      // Display Todo in main section
+     let retrievedTodo = localStorage.getItem('todo');
+     let todoObjectToPost = {}
 
-    //  if (localStorage.getItem('form')) {
-    //     mainPanelTitle.textContent = "testing"
-    //  }
 
 }
