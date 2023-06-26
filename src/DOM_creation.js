@@ -94,6 +94,7 @@ export function DOM_creation() {
     // Folder panel
     const folderContentDiv = document.createElement('div');
     folderContentDiv.classList.add('folderContentDiv');
+    folderContentDiv.setAttribute("id", "folderContentDiv");
     contentDiv.appendChild(folderContentDiv);
     
     // Folder title and icon div

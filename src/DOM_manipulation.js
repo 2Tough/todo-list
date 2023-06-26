@@ -25,53 +25,6 @@ export function DOM_manipulation() {
     const mainPanelDate = document.getElementById("mainPanelDateText");
     const mainPanelFolder= document.getElementById("mainPanelDiv");
 
-    // Folder factory
-    
-    const createFolderFactory = (name) => {
-        return {
-            folder: 
-            name,
-            todo: ""
-        }
-    }
-
-    let defaultFolder = createFolderFactory('Default')
-    let folders = defaultFolder
-    let foldersDirectory = []
-    
-    const todoFactory = (title, description, priority, dueDate) => {
-        return {
-            title,
-            description,
-            priority,
-            dueDate
-        }
-    }
-    
-    // Todo factory
-    
-    function createTodo(title, description, priority, dueDate, folder) {
-        let todo = todoFactory(title, description, priority, dueDate)
-        if(folder === "") {
-            folders.todo = todo
-            foldersDirectory.push(defaultFolder)
-        } else {
-            let newFolder = createFolderFactory(folder)
-            newFolder.name = todo
-            foldersDirectory.push(newFolder)
-        }
-        return todo
-    }
-
-    // Todo placeholders
-
-    const note0 = createTodo("Go to church", "Need God", "1", "today", "Mass")
-    const note1 = todoFactory("Buy eggs", "Need to get some protein", "1", "Today")
-    const note2 = todoFactory("Train", "I need to train", "1", "")
-    const note3 = todoFactory("Program", "Need to program", "1", "")
-    
-    console.log(foldersDirectory)
-    
     let array = []
     let todoObject = {
         title: "",
@@ -81,19 +34,38 @@ export function DOM_manipulation() {
         folder: ""
     }
 
+       // Folder factory
+    
+       const createFolderFactory = (name) => {
+        return {
+            folder: 
+            name,
+            todo: ""
+        }
+    }
+
+    let defaultFolder = createFolderFactory('Default')
+    
+    // Todo factory
+    
+    function createTodo(title, description, priority, dueDate, folder) {
+        return {
+            title,
+            description,
+            priority,
+            dueDate,
+            folder
+        }
+    }
+
+
+
     // Submit Todo button 
     
     submitBtn.addEventListener('click', function(e) {
         e.preventDefault();
 
-        todoObject = {
-                title: todoTitle.value,
-                description: todoDescription.value,
-                priority: todoPriority.value,
-                dueDate: todoDate.value,
-                folder: todoFolder.value
-                }
-        
+        let todoCreation = createTodo(todoTitle.value,todoDescription.value, todoPriority.value, todoDate.value, todoFolder.value)
         
         // Saving to localStorage
         if (localStorage.getItem('todo') === null) {
@@ -101,15 +73,43 @@ export function DOM_manipulation() {
         } else {
             array =  JSON.parse(localStorage.getItem('todo'))
         }
-        array.push(todoObject);
+        array.push(todoCreation);
         localStorage.setItem('todo', JSON.stringify(array))
-        
+        console.log(array[array.length-1].title)
+
+        // createFolder()
      })
     
+     
+    
+        // Todo placeholders
+    
+        const note0 = createTodo("Go to church", "Need God", "1", "today", "Mass")
+        const note1 = createTodo("Buy eggs", "Need to get some protein", "1", "Today")
+        const note2 = createTodo("Train", "I need to train", "1", "")
+        const note3 = createTodo("Program", "Need to program", "1", "")
+
 
      // Display Todo in main section
-     let retrievedTodo = localStorage.getItem('todo');
+     let retrievedTodo = array[array.length-1];
      let todoObjectToPost = {}
+
+     // Display new folder in side panel
+
+     let foldersDiv = document.getElementById('folderContentDiv')
+
+    // New Folder icon
+
+    folderContentDiv.innerHTML = `
+        <div>
+            <p class="folderTitle">Test folder</p>
+            <img class="folderDiv" src="../images/folder.png">
+        </div>`
+    
+    
+    
+
+    
 
 
 }
