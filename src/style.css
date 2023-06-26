@@ -29,10 +29,17 @@
 
 /* Folders section */
 
-.folderContentDiv {
+#folderContentDiv {
+    background-color: white;
+    border-right: black 2px solid;
+    
+
+} 
+
+.folderContentDiv *{
     background-color: white;
     grid-area: folder-panel;
-    border-right: black 2px solid;
+    margin-left: 0.5em;
 }
 
 .folderDiv {
