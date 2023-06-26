@@ -24,7 +24,6 @@ export function DOM_creation() {
 
     // Main panel divs
     
-
     const mainPanelTodoDiv = document.createElement('div');
     mainPanelTodoDiv.classList.add('mainPanelTodoDiv');
     mainPanelDiv.appendChild(mainPanelTodoDiv);
@@ -97,26 +96,26 @@ export function DOM_creation() {
     folderContentDiv.setAttribute("id", "folderContentDiv");
     contentDiv.appendChild(folderContentDiv);
     
-    // Folder title and icon div
-    const folderIconTextContainer = document.createElement('div');
-    folderIconTextContainer.classList.add('folderIconTextContainer');
+    // // Folder title and icon div
+    // const folderIconTextContainer = document.createElement('div');
+    // folderIconTextContainer.classList.add('folderIconTextContainer');
     
 
-    // Text
-    const folderTextContainer = document.createElement('p');
-    folderTextContainer.classList.add('folderTextContainer');
-    folderIconTextContainer.textContent = "Default";
+    // // Text
+    // const folderTextContainer = document.createElement('p');
+    // folderTextContainer.classList.add('folderTextContainer');
+    // folderIconTextContainer.textContent = "Default";
     
 
-    // Icon
-    const imageFolder = document.createElement('img');
-    imageFolder.classList.add('folderDiv');
-    imageFolder.innerHTML = "Default";
-    imageFolder.src = '../images/folder.png';
+    // // Icon
+    // const imageFolder = document.createElement('img');
+    // imageFolder.classList.add('folderDiv');
+    
+    // imageFolder.src = '../images/folder.png';
 
 
-    folderIconTextContainer.appendChild(imageFolder, folderTextContainer);
-    folderContentDiv.appendChild(folderIconTextContainer);
+    // folderIconTextContainer.appendChild(imageFolder, folderTextContainer);
+    // folderContentDiv.appendChild(folderIconTextContainer);
 
     document.querySelectorAll(".folderDiv").forEach(folder => folder.addEventListener("click", ()=> {
         console.log('Todo folder clicked!')

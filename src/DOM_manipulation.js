@@ -34,17 +34,23 @@ export function DOM_manipulation() {
         folder: ""
     }
 
-       // Folder factory
+    // Folder factory
     
        const createFolderFactory = (name) => {
         return {
-            folder: 
-            name,
-            todo: ""
+            folder: name,
+            img: 
+            folderContentDiv.innerHTML = `
+            <div>
+                <p class="folderTitle">${name}</p>
+                <img class="folderDiv" src="../images/folder.png">
+            </div>`
         }
     }
 
     let defaultFolder = createFolderFactory('Default')
+
+    console.log(defaultFolder)
     
     // Todo factory
     
@@ -58,8 +64,6 @@ export function DOM_manipulation() {
         }
     }
 
-
-
     // Submit Todo button 
     
     submitBtn.addEventListener('click', function(e) {
@@ -67,21 +71,20 @@ export function DOM_manipulation() {
 
         let todoCreation = createTodo(todoTitle.value,todoDescription.value, todoPriority.value, todoDate.value, todoFolder.value)
         
+        console.log(todoCreation)
         // Saving to localStorage
         if (localStorage.getItem('todo') === null) {
             array = [];
         } else {
             array =  JSON.parse(localStorage.getItem('todo'))
         }
-        array.push(todoCreation);
+        array.push(todoObject);
         localStorage.setItem('todo', JSON.stringify(array))
         console.log(array[array.length-1].title)
 
         // createFolder()
      })
-    
-     
-    
+        
         // Todo placeholders
     
         const note0 = createTodo("Go to church", "Need God", "1", "today", "Mass")
@@ -100,11 +103,7 @@ export function DOM_manipulation() {
 
     // New Folder icon
 
-    folderContentDiv.innerHTML = `
-        <div>
-            <p class="folderTitle">Test folder</p>
-            <img class="folderDiv" src="../images/folder.png">
-        </div>`
+
     
     
     
