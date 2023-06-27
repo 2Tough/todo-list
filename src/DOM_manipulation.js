@@ -31,16 +31,23 @@ export function DOM_manipulation() {
 
     // Folder factory
     
-       const createFolderFactory = (name) => {
+    const createFolderFactory = (name) => {
             let folder = {
                 name
             };
         todoArrayFolder.push(name) 
         }
     // Display to folders section factory
-    //    code here
-    //
+    
+    const folderContentDiv = document.getElementById('folderContentDiv');
 
+    const folderContainerFactory = (folder) => {
+        const folderIcons = document.createElement('img');
+        folderIcons.src = '../images/folder.png';
+        folderIcons.innerHTML = `${folder}`    
+        folderContentDiv.appendChild(folderIcons);
+    }
+    
     let defaultFolder = createFolderFactory('Default')
     let defaultFolder2 = createFolderFactory('Default2')
 
@@ -72,11 +79,12 @@ export function DOM_manipulation() {
         } else {
             array =  JSON.parse(localStorage.getItem('todo'))
         }
-        array.push(todoObject);
+        array.push(todoCreation);
         localStorage.setItem('todo', JSON.stringify(array))
         console.log(array[array.length-1].title)
 
         // createFolder()
+        folderContainerFactory(todoFolder.value)
      })
         
         // Todo placeholders
