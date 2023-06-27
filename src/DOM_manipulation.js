@@ -26,31 +26,25 @@ export function DOM_manipulation() {
     const mainPanelFolder= document.getElementById("mainPanelDiv");
 
     let array = []
-    let todoObject = {
-        title: "",
-        description: "",
-        priority: "",
-        dueDate: "",
-        folder: ""
-    }
+    let todoArrayFolder = [];
+    
 
     // Folder factory
     
        const createFolderFactory = (name) => {
-        return {
-            folder: name,
-            img: 
-            folderContentDiv.innerHTML = `
-            <div>
-                <p class="folderTitle">${name}</p>
-                <img class="folderDiv" src="../images/folder.png">
-            </div>`
+            let folder = {
+                name
+            };
+        todoArrayFolder.push(name) 
         }
-    }
+    // Display to folders section factory
+    //    code here
+    //
 
     let defaultFolder = createFolderFactory('Default')
+    let defaultFolder2 = createFolderFactory('Default2')
 
-    console.log(defaultFolder)
+    console.log(todoArrayFolder[1])
     
     // Todo factory
     
