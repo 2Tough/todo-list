@@ -40,12 +40,24 @@ export function DOM_manipulation() {
     // Display to folders section factory
     
     const folderContentDiv = document.getElementById('folderContentDiv');
-
+    
     const folderContainerFactory = (folder) => {
-        const folderIcons = document.createElement('img');
-        folderIcons.src = '../images/folder.png';
-        folderIcons.innerHTML = `${folder}`    
+        const folderIcons = document.createElement('div');
+
+        folderIcons.innerHTML = 
+        `
+            <div> 
+                <p>${folder}</p>
+                <img class="folderDiv" src = '../images/folder.png';>
+            </div>
+        
+        `
         folderContentDiv.appendChild(folderIcons);
+        // const folderIcons = document.createElement('img');
+        // folderIcons.src = '../images/folder.png';
+        // folderIcons.innerHTML = `${folder}`;
+        // folderIcons.classList.add('folderDiv');    
+        // folderContentDiv.appendChild(folderIcons);
     }
     
     let defaultFolder = createFolderFactory('Default')
