@@ -94,14 +94,14 @@ export function DOM_manipulation() {
         // createFolder()
         folderContainerFactory(todoFolder.value);
         displayFolder(todoTitle.value, todoDescription.value, todoPriority.value, todoDate.value, todoFolder.value);
-     })
+    })
         
         // Todo placeholders
     
-        const note0 = createTodo("Go to church", "Need God", "1", "today", "Mass")
-        const note1 = createTodo("Buy eggs", "Need to get some protein", "1", "Today")
-        const note2 = createTodo("Train", "I need to train", "1", "")
-        const note3 = createTodo("Program", "Need to program", "1", "")
+    const note0 = createTodo("Go to church", "Need God", "1", "today", "Mass")
+    const note1 = createTodo("Buy eggs", "Need to get some protein", "1", "Today")
+    const note2 = createTodo("Train", "I need to train", "1", "")
+    const note3 = createTodo("Program", "Need to program", "1", "")
 
 
      // Display Todo in main section
@@ -142,4 +142,11 @@ export function DOM_manipulation() {
         `<h2>${folder} content for:</h2> 
         `
     }
+
+    // Display folder contents function after selecting folder
+    // This should retrieve the data from local storage
+
+    // Display working edit & delete buttons in main section
+    // InnerHtml / textContent would be equal to element.value
+    // Delete button should search for an id and delete from local storage
 }
