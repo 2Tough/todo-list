@@ -1,6 +1,4 @@
 import { DOM_creation } from "./DOM_creation.js"
-import { array } from "./DOM_creation.js"
-
 
 export function DOM_manipulation() {
 
@@ -19,16 +17,14 @@ export function DOM_manipulation() {
 
     // Variables for main panel
 
-    const mainPanelTitle = document.getElementById("mainPanelTitleText");
-    const mainPanelDescription = document.getElementById("mainPanelDescriptionText");
-    const mainPanelPriority = document.getElementById("mainPanelPriorityText");
-    const mainPanelDate = document.getElementById("mainPanelDateText");
-    const mainPanelFolder= document.getElementById("mainPanelDiv");
-
+    const mainPanelTitle = document.getElementById("mainPanelTitle");
+    const mainPanelDescription = document.getElementById("mainPanelDescription");
+    const mainPanelPriority = document.getElementById("mainPanelPriority");
+    const mainPanelDate = document.getElementById("mainPanelDate");
+    
     let array = []
     let todoArrayFolder = [];
     
-
     // Folder factory
     
     const createFolderFactory = (name) => {
@@ -96,7 +92,8 @@ export function DOM_manipulation() {
         console.log(array[array.length-1].title)
 
         // createFolder()
-        folderContainerFactory(todoFolder.value)
+        folderContainerFactory(todoFolder.value);
+        displayFolder(todoTitle.value, todoDescription.value, todoPriority.value, todoDate.value, todoFolder.value);
      })
         
         // Todo placeholders
@@ -113,16 +110,36 @@ export function DOM_manipulation() {
 
      // Display new folder in side panel
 
-     let foldersDiv = document.getElementById('folderContentDiv')
+     let mainFoldersDiv = document.getElementById('folderContentDiv');
+     let mainPanelFolderName = document.getElementById('mainPanelFolderName');
 
-    // New Folder icon
-
-
-    
-    
-    
-
-    
-
-
+    function displayFolder(title, description, priority, date, folder) {
+        mainPanelTitle.innerHTML = 
+        `<div>
+            <h3>Title</h3>
+            <p>${title}</p>
+         </div> 
+        `
+        mainPanelDescription.innerHTML = 
+        `<div>
+            <h3>Description</h3>
+            <p>${description}</p>
+         </div> 
+        `
+        mainPanelPriority.innerHTML = 
+        `<div>
+            <h3>Priority</h3>
+            <p>${priority}</p>
+         </div> 
+        `
+        mainPanelDate.innerHTML = 
+        `<div>
+            <h3>Date</h3>
+            <p>${date}</p>
+         </div> 
+        `
+        mainPanelFolderName.innerHTML = 
+        `<h2>${folder} content for:</h2> 
+        `
+    }
 }
