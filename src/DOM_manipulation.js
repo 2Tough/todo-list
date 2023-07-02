@@ -36,17 +36,17 @@ export function DOM_manipulation() {
     // Display to folders section factory
     
     const folderContentDiv = document.getElementById('folderContentDiv');
+    let count = 0
     
     const folderContainerFactory = (folder) => {
         const folderIcons = document.createElement('div');
+        folderIcons.classList.add('folderIcons')
+        count++
 
         folderIcons.innerHTML = 
         `
-            <div> 
-                <p>${folder}</p>
-                <img class="folderDiv" src = '../images/folder.png';>
-            </div>
-        
+            <p>${folder}</p>
+            <img class="folderDiv" data-el='${count}' id='${count}' src = '../images/folder.png';>
         `
         folderContentDiv.appendChild(folderIcons);
         // const folderIcons = document.createElement('img');
@@ -58,6 +58,10 @@ export function DOM_manipulation() {
     
     let defaultFolder = createFolderFactory('Default')
     let defaultFolder2 = createFolderFactory('Default2')
+
+    function handleClick() {
+        console.log
+    }
 
     console.log(todoArrayFolder[1])
     
@@ -114,6 +118,8 @@ export function DOM_manipulation() {
      let mainPanelFolderName = document.getElementById('mainPanelFolderName');
 
     function displayFolder(title, description, priority, date, folder) {
+       
+
         mainPanelTitle.innerHTML = 
         `<div>
             <h3>Title</h3>
@@ -145,8 +151,15 @@ export function DOM_manipulation() {
 
     // Display folder contents function after selecting folder
     // This should retrieve the data from local storage
+    
+    // Variable for all and corresponding folders
+    const folderSelect = document.getElementsByClassName('folderIcons');
 
-    // Display working edit & delete buttons in main section
+    folderSelect.addEventListener('click', function() {
+        console.log('data-el')
+    })
+
+// Display working edit & delete buttons in main section
     // InnerHtml / textContent would be equal to element.value
     // Delete button should search for an id and delete from local storage
 }
