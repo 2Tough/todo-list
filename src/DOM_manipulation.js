@@ -61,11 +61,27 @@ export function DOM_manipulation() {
 
         Array.from(document.getElementsByClassName('folderIcons')).forEach(el => {
             addEventListener('click', ()=> {
-            console.log(localStorage.getItem('todo').title)
             console.log(array[array.length-1].description)
             })
         })
+
+       
         
+    }
+
+    let folders = []
+
+    function filterStorage() {
+        console.log('getting from storage')
+        if(localStorage.getItem('todo') === null) {
+            folders = [];
+        } else {
+            folders = JSON.parse(localStorage.getItem('todo'));
+            folders.map(el => {
+                console.log(el.title)})
+                console.log(folders)
+            
+        }
     }
 
 
@@ -108,6 +124,8 @@ export function DOM_manipulation() {
         // createFolder()
         folderContainerFactory(todoFolder.value);
         displayFolder(todoTitle.value, todoDescription.value, todoPriority.value, todoDate.value, todoFolder.value);
+
+        filterStorage()
     })
         
         // Todo placeholders
