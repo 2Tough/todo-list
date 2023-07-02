@@ -43,13 +43,23 @@ export function DOM_manipulation() {
         folderIcons.classList.add('folderIcons')
         count++
         folderIcons.setAttribute('dataEl', `${count}`)
+
+        if(localStorage.getItem('todo') === null) {
+            folders = [];
+        } else {
+            folders = JSON.parse(localStorage.getItem('todo'));
+            folders.map(el => {
+                let folderNames = ""
+                folderNames += `<p>${el.folder}</p>
+                                <img class="folderDiv" src = '../images/folder.png';>
+                `
+            folderIcons.innerHTML += folderNames;
+
+            })
+        }
         
 
-        folderIcons.innerHTML = 
-        `
-            <p>${folder}</p>
-            <img class="folderDiv" src = '../images/folder.png';>
-        `
+        
         folderContentDiv.appendChild(folderIcons);
         // const folderIcons = document.createElement('img');
         // folderIcons.src = '../images/folder.png';
@@ -73,15 +83,7 @@ export function DOM_manipulation() {
 
     function filterStorage() {
         console.log('getting from storage')
-        if(localStorage.getItem('todo') === null) {
-            folders = [];
-        } else {
-            folders = JSON.parse(localStorage.getItem('todo'));
-            folders.map(el => {
-                console.log(el.title)})
-                console.log(folders)
-            
-        }
+
     }
 
 
