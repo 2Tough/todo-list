@@ -42,11 +42,13 @@ export function DOM_manipulation() {
         const folderIcons = document.createElement('div');
         folderIcons.classList.add('folderIcons')
         count++
+        folderIcons.setAttribute('dataEl', `${count}`)
+        
 
         folderIcons.innerHTML = 
         `
             <p>${folder}</p>
-            <img class="folderDiv" data-el='${count}' id='${count}' src = '../images/folder.png';>
+            <img class="folderDiv" src = '../images/folder.png';>
         `
         folderContentDiv.appendChild(folderIcons);
         // const folderIcons = document.createElement('img');
@@ -54,14 +56,22 @@ export function DOM_manipulation() {
         // folderIcons.innerHTML = `${folder}`;
         // folderIcons.classList.add('folderDiv');    
         // folderContentDiv.appendChild(folderIcons);
+
+        // Check local storage to get Folder titles and display them in side Panel
+
+        Array.from(document.getElementsByClassName('folderIcons')).forEach(el => {
+            addEventListener('click', ()=> {
+            console.log(localStorage.getItem('todo').title)
+            console.log(array[array.length-1].description)
+            })
+        })
+        
     }
+
+
     
     let defaultFolder = createFolderFactory('Default')
     let defaultFolder2 = createFolderFactory('Default2')
-
-    function handleClick() {
-        console.log
-    }
 
     console.log(todoArrayFolder[1])
     
@@ -150,14 +160,11 @@ export function DOM_manipulation() {
     }
 
     // Display folder contents function after selecting folder
+
+    
     // This should retrieve the data from local storage
     
-    // Variable for all and corresponding folders
-    const folderSelect = document.getElementsByClassName('folderIcons');
-
-    folderSelect.addEventListener('click', function() {
-        console.log('data-el')
-    })
+    
 
 // Display working edit & delete buttons in main section
     // InnerHtml / textContent would be equal to element.value
