@@ -37,57 +37,43 @@ export function DOM_manipulation() {
     
     const folderContentDiv = document.getElementById('folderContentDiv');
     let count = 0
+    let folders = []
     
     const folderContainerFactory = (folder) => {
         const folderIcons = document.createElement('div');
         folderIcons.classList.add('folderIcons')
         count++
-        folderIcons.setAttribute('dataEl', `${count}`)
-
+        
         if(localStorage.getItem('todo') === null) {
             folders = [];
         } else {
+            // Folders need to display not only on creation but on load
             folders = JSON.parse(localStorage.getItem('todo'));
             folders.map(el => {
                 let folderNames = ""
                 folderNames += `<p>${el.folder}</p>
-                                <img class="folderDiv" src = '../images/folder.png';>
+                                <img class="folderDiv" datael='${count}' src = '../images/folder.png';>
                 `
             folderIcons.innerHTML += folderNames;
-
             })
         }
-        
 
-        
         folderContentDiv.appendChild(folderIcons);
-        // const folderIcons = document.createElement('img');
-        // folderIcons.src = '../images/folder.png';
-        // folderIcons.innerHTML = `${folder}`;
-        // folderIcons.classList.add('folderDiv');    
-        // folderContentDiv.appendChild(folderIcons);
 
         // Check local storage to get Folder titles and display them in side Panel
-
-        Array.from(document.getElementsByClassName('folderIcons')).forEach(el => {
-            addEventListener('click', ()=> {
-            console.log(array[array.length-1].description)
-            })
-        })
-
-       
-        
     }
 
-    let folders = []
+    // Folder div not working since they don't show up only after they show up.
+    // The folders need to show up on load 
+    // Separate saving to localStorage and displaying.
 
-    function filterStorage() {
-        console.log('getting from storage')
-
-    }
-
-
+    // This would work only after the elements are loaded.
     
+    // folderDiv.addEventListener('click', ()=> {
+    //     console.log('test')
+    //     })
+    
+
     let defaultFolder = createFolderFactory('Default')
     let defaultFolder2 = createFolderFactory('Default2')
 
@@ -127,7 +113,6 @@ export function DOM_manipulation() {
         folderContainerFactory(todoFolder.value);
         displayFolder(todoTitle.value, todoDescription.value, todoPriority.value, todoDate.value, todoFolder.value);
 
-        filterStorage()
     })
         
         // Todo placeholders
