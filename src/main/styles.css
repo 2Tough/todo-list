@@ -1,0 +1,133 @@
+/* styles.css */
+:root {
+  --primary: rgb(216, 255, 44);
+  --secondary: rgb(4, 0, 36);
+  --terciary: rgb(148, 5, 177);
+}
+
+body {
+  background-color: var(--secondary);
+  color: var(--primary);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 300;
+  font-family: Helvetica, Verdana, system-ui;
+}
+
+/* Main containers */
+
+#todo-main {
+  display: grid;
+  row-gap: 1em;
+  column-gap: 1em;
+  grid:
+    "header header header" auto
+    "list todo todo" auto /
+    minmax(200px, 400px) 1fr 0.5fr;
+}
+
+.hero-title {
+  grid-area: header;
+  color: var(--primary);
+  padding: 0.3em;
+  display: flex;
+  justify-content: center;
+  background-color: var(--terciary);
+  font-size: 2.5em;
+}
+
+.todo-task-list-container {
+  grid-area: list;
+  margin-left: 1.5em;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+.todo-task-creator-container {
+  grid-area: todo;
+  margin-left: 1.5em;
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+/* Todo list tasks */
+
+.todo-task-list-container-unit {
+  border: 1px;
+  background-color: var(--primary);
+  color: var(--secondary);
+  border-radius: 5px;
+  margin-top: 0.2em;
+  padding: 0.5em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo-task-list-container-icons {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.todo-task-list-container-icons img {
+  width: 20px;
+  opacity: 0.5;
+}
+
+.todo-task-list-container-icons img:hover {
+  opacity: 1;
+  width: 25px;
+}
+
+.todo-task-list-container-unit-description,
+.todo-task-list-container-unit-dueDate,
+.todo-task-list-container-unit-priority {
+  font-size: 0.8em;
+}
+
+/* Todo task creator */
+
+.new-task {
+  border-radius: 5px;
+  padding: 0.3em;
+  border: none;
+  margin-right: 1.5em;
+}
+
+label {
+  padding-right: 0.3em;
+}
+
+.new-task:focus {
+  background-color: rgb(216, 255, 44, 0.8);
+  border: 1px solid var(--terciary);
+  background-color: var(--primary);
+  outline: var(--secondary);
+}
+
+.btn {
+  padding: 0.7em 1.5em;
+  background-color: var(--primary);
+  font-size: 0.8em;
+  border-radius: 5px;
+  border: none;
+}
+
+.btn:hover {
+  background-color: var(--terciary);
+  color: var(--primary);
+  transition: 150ms ease-in;
+}
+
+/* Icon images */
+
+.checkIcon {
+  background-image: url("../assets/check.png");
+}
